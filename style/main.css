@@ -1,0 +1,50 @@
+p {
+    font-family: 'More Perfect DOS';
+}
+
+@font-face {
+    font-family: "More Perfect DOS";
+    src: url("../res/MorePerfectDOSVGA.ttf");
+}
+
+#user-input {
+    background-color: black;
+    width: 800;
+    height: 200;
+    color: white;
+    font-family: 'More Perfect DOS';
+}
+
+#input-field {
+    border: none;
+    background-color: black;
+    color: white;
+    font-family: 'More Perfect DOS';
+    font-size: 16px;
+}
+
+#input-field:focus {
+    outline: none;
+}
+
+#mid-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+}
+
+#draw, #about, #projects {
+    width: 800;
+    height: 400;
+    background-color: black;
+    color: white;
+    font-family: 'More Perfect DOS';
+}
+
+#wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: 600;
+    justify-content: center;
+    gap: 0;
+}

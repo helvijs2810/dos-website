@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style/main.css"/>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script type="module" src="./scripts/load.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="mid-section">
+        <canvas id="draw" resize="true">
+            <canvas id="panel-one">
+
+            </canvas>
+            <canvas id="panel-two">
+
+            </canvas>
+        </canvas>
+        <div id="user-input">
+            <p id="error-report" style="visibility: hidden;">Helvijs Corp. All right reserved. </p>
+            <label for="input-field" style="visibility: hidden;">C:></label>
+            <input type="text" id="input-field" autocomplete="off" style="visibility: hidden;" maxlength="10">
+            <button id="submit-button" hidden>Submit</button>
+        </div>
+        </div>
+    </div>
+    <script>
+        $(document).on('keypress',function(e) {
+            if(e.which == 13) {
+                var userIn = document.getElementById('input-field').value;
+                var regCom = /^about$/;
+                var regCom2 = /^projects$/;
+        
+                console.log(userIn.toLowerCase().match(regCom));
+        
+                    if(userIn.toLowerCase().match(regCom)){
+                        showInfoBox();
+                        document.getElementById('error-report').innerHTML = "Helvijs Corp. All right reserved. ";
+                        document.getElementById('input-field').disabled = true;
+                    } else if(userIn.toLowerCase().match(regCom2)){
+                        showInfoBox();
+                        document.getElementById('error-report').innerHTML = "Helvijs Corp. All right reserved. ";
+                        document.getElementById('input-field').disabled = true;
+                    } else {
+                        document.getElementById('error-report').innerHTML = "Wrong command. Please try again using valid command. See commands above.";
+                    }
+            }
+        });
+
+        $(document).on('keyup', function(e) {
+            if(e.which == 27) {
+                closeInfoBox();
+                document.getElementById('input-field').disabled = false;
+            }
+        })
+        </script>
+</body>
+</html>
